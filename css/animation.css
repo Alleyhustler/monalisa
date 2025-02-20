@@ -1,0 +1,76 @@
+@keyframes bg-scroll {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: calc(100%) calc(-100%);
+  }
+}
+
+@keyframes color-changing-border {
+  0% {border-color: white;}
+  50% {border-color: rgb(10, 10, 10);}
+  100% {border-color: white;}
+}
+
+@keyframes scroll {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}
+
+/* scroll text glitch effect: https://codepen.io/blazicke/pen/dQjxMr */
+
+.el-st {
+    color: #eee;
+    font-size: 30px;
+    font-weight:bold;
+    letter-spacing: 4px;
+}
+
+.el-sp.is-changing {
+    animation: changing 0.1s infinite;
+}
+
+.el-sp {
+    transition: all 0.1s;
+    text-shadow: 0 0 10px #008f11;
+    position: relative;
+    will-change: transform, opacity;
+}
+
+.el-sp:after {
+    content:attr(data-txt);
+    color:#eee;
+    position: absolute;
+    top: 0;
+    left:0;
+    opacity:0;
+    will-change: transform, opacity;
+}
+
+.el-sp.is-changing:after {
+    animation: changingAfter 0.4s infinite alternate;
+}
+
+@keyframes changing {
+    0% {opacity:1;}
+    50% {opacity:0.5;}
+    100% {opacity:1;}
+}
+
+@keyframes changingAfter {
+    0% {opacity:0.3;transform:translateX(10px) scaleX(2)}
+    50% {opacity:0;transform:translateX(0) scaleX(2)}
+    100% {opacity:0.3;transform:translateX(-10px) scaleX(2)}
+}
+
+
+@keyframes shift {
+    0% { background-position: 0% 0%, 2.5% 2.5%; }
+    100% { background-position: -5% -5%, -2.5% -2.5%; }
+}

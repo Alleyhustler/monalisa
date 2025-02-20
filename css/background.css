@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: radial-gradient(circle, #333 10%, transparent 10%), radial-gradient(circle, #333 10%, transparent 10%);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  background-color: #1a1a1a;
+  background-attachment: fixed;
+  animation: bg-scroll 0.3s linear infinite; /* Faster animation (10s instead of 30s) */
+}
+
+@keyframes bg-scroll {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 50px 50px, 75px 75px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Adjustments for smaller screens if needed */
+}

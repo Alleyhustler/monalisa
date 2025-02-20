@@ -1,0 +1,16 @@
+button {
+  cursor: pointer;
+}
+
+.button {
+  background: bottom;
+  cursor: pointer;
+}
+
+.back-button {
+  float: left;
+}
+
+@media(max-width: 600px){
+
+}
